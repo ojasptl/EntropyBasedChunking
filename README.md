@@ -57,7 +57,7 @@ You will be prompted to:
 ---
 
 ## Trial run example
-Example CLI session using the "Attention Is All You Need" PDF and a series of questions:
+Example CLI session using the "Attention Is All You Need" PDF and a series of questions (output formatted and answer wording corrected for accuracy):
 ```text
 Enter your question (or 'quit' to exit): What exact formula is used for scaled dot-product attention?
 Top K results (default 5): 5
@@ -264,7 +264,7 @@ Q: What learning rate schedule was used?
 
 A: The learning rate schedule used was defined by the formula:
 
-\[ lrate = d^{-0.5} \cdot \text{model} \cdot \min(\text{step_num}-0.5, \text{step_num} \cdot \text{warmup_steps} - 1.5) \]
+\[ lrate = d_{model}^{-0.5} \cdot \min(\text{step_num}^{-0.5}, \text{step_num} \cdot \text{warmup_steps}^{-1.5}) \]
 
 It increased linearly for the first \( \text{warmup_steps} \) training steps and then decreased proportionally to the inverse square root of the step number. Warmup_steps was set to 4000.
 ================================================================================
@@ -624,12 +624,9 @@ predictions for position ican depend only on the known outputs at positions less
 ================================================================================
 Q: Does the paper use GRUs in the encoder?
 
-A: No, the paper does not mention using GRUs (Gated Recurrent Units) in the encoder. It describes using positional encodings instead and mentions employing residual connections around each sub-layer, followed by layer normalization, without specifying any specific type of recurrent unit like GRU.
+A: No. The Transformer replaces recurrent layers (including GRUs) with multi-headed self-attention mechanisms.
 ================================================================================
 ```
-Notes on the example outputs:
-- The learning rate schedule formula is typically written as: `lrate = d_model^-0.5 · min(step_num^-0.5, step_num · warmup_steps^-1.5)`.
-- The Transformer does not use GRUs because it replaces recurrent layers with multi-headed self-attention.
 
 ---
 
