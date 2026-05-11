@@ -56,6 +56,35 @@ You will be prompted to:
 
 ---
 
+## Trial run example
+Example CLI session using the "Attention Is All You Need" PDF (condensed to three representative questions):
+
+### 1) Scaled dot-product attention formula
+**Top retrieved chunks (abridged)**
+- `Chunk #45` — “We compute the dot products … divide each by `sqrt(d_k)`, and apply a softmax function …”
+- `Chunk #47` — “`Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) V`”
+- `Chunk #48` — “Dot-product attention is identical … except for the scaling factor `1/sqrt(d_k)`.”
+
+**LLM answer**
+> `Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) V`
+
+### 2) Learning rate schedule
+**Top retrieved chunks (abridged)**
+- `Chunk #98` — “We varied the learning rate … `lrate = d_model^-0.5 * min(step_num^-0.5, step_num * warmup_steps^-1.5)` … warmup_steps = 4000.”
+- `Chunk #99` — “Increase linearly for warmup_steps, then decrease proportional to the inverse square root of step_num.”
+
+**LLM answer**
+> `lrate = d_model^-0.5 * min(step_num^-0.5, step_num * warmup_steps^-1.5)`, with warmup_steps = 4000.
+
+### 3) Base model attention heads
+**Top retrieved chunks (abridged)**
+- `Chunk #57` — “We employ h = 8 parallel attention layers (heads) …”
+
+**LLM answer**
+> The base Transformer uses 8 attention heads.
+
+---
+
 ## Run the Streamlit app
 ```bash
 streamlit run app.py
