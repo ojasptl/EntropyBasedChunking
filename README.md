@@ -61,20 +61,20 @@ Example CLI session using the "Attention Is All You Need" PDF (condensed to thre
 
 ### 1) Scaled dot-product attention formula
 **Top retrieved chunks (abridged)**
-- `Chunk #45` — “We compute the dot products … divide each by √dₖ, and apply a softmax function …”
-- `Chunk #47` — “Attention(Q, K, V) = softmax(QKᵀ / √dₖ)V”
-- `Chunk #48` — “Dot-product attention is identical … except for the scaling factor 1/√dₖ.”
+- `Chunk #45` — “We compute the dot products … divide each by √d_k, and apply a softmax function …”
+- `Chunk #47` — “Attention(Q, K, V) = softmax(QK^T / √d_k)V”
+- `Chunk #48` — “Dot-product attention is identical … except for the scaling factor 1/√d_k.”
 
 **LLM answer**
-> Attention(Q, K, V) = softmax(QKᵀ / √dₖ)V
+> Attention(Q, K, V) = softmax(QK^T / √d_k)V
 
 ### 2) Learning rate schedule
 **Top retrieved chunks (abridged)**
-- `Chunk #98` — “We varied the learning rate … lrate = d_model^-0.5 · min(step_num^-0.5, step_num · warmup_steps^-1.5) … warmup_steps = 4000.”
+- `Chunk #98` — “We varied the learning rate … lrate = d_model^{-0.5} · min(step_num^{-0.5}, step_num · warmup_steps^{-1.5}) … warmup_steps = 4000.”
 - `Chunk #99` — “Increase linearly for warmup_steps, then decrease proportional to the inverse square root of step_num.”
 
 **LLM answer**
-> lrate = d_model^-0.5 · min(step_num^-0.5, step_num · warmup_steps^-1.5), with warmup_steps = 4000.
+> lrate = d_model^{-0.5} · min(step_num^{-0.5}, step_num · warmup_steps^{-1.5}), with warmup_steps = 4000.
 
 ### 3) Base model attention heads
 **Top retrieved chunks (abridged)**
