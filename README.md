@@ -627,6 +627,9 @@ Q: Does the paper use GRUs in the encoder?
 A: No, the paper does not mention using GRUs (Gated Recurrent Units) in the encoder. It describes using positional encodings instead and mentions employing residual connections around each sub-layer, followed by layer normalization, without specifying any specific type of recurrent unit like GRU.
 ================================================================================
 ```
+Notes on the example outputs:
+- The learning rate schedule formula is typically written as: `lrate = d_model^-0.5 · min(step_num^-0.5, step_num · warmup_steps^-1.5)`.
+- The Transformer does not use GRUs because it replaces recurrent layers with multi-headed self-attention.
 
 ---
 
