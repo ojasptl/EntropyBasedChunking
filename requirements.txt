@@ -1,0 +1,10 @@
+PyPDF2
+sentence-transformers
+qdrant-client
+transformers
+torch
+nltk
+scikit-learn
+numpy
+rank-bm25
+streamlit
