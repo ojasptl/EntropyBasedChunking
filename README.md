@@ -63,7 +63,7 @@ Example CLI session using the "Attention Is All You Need" PDF (condensed to thre
 **Top retrieved chunks (abridged)**
 - `Chunk #45` — “We compute the dot products … divide each by $\sqrt{d_k}$, and apply a softmax function …”
 - `Chunk #47` — “$\text{Attention}(Q, K, V) = \text{softmax}(QK^T / \sqrt{d_k})V$”
-- `Chunk #48` — “Dot-product attention is identical … except for the scaling factor $1/\\sqrt{d_k}$.”
+- `Chunk #48` — “Dot-product attention is identical … except for the scaling factor $1/\sqrt{d_k}$.”
 
 **LLM answer**
 > $\text{Attention}(Q, K, V) = \text{softmax}(QK^T / \sqrt{d_k})V$
